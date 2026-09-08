@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto · TRIBU Parque Infantil</title>
+<meta name="description" content="Contacto de TRIBU Parque Infantil en Palma: dirección, teléfono, correo y mapa."/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind-config.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md" data-page="contacto">
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(89,64,55,0.06)]">
+  <div class="h-20 max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop grid grid-cols-[1fr_auto_1fr] items-center gap-space-md">
+    <a class="justify-self-start flex items-center group" href="index.html">
+      <img alt="TRIBU Parque Infantil" class="h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/Logo-350x100-1.png"/>
+    </a>
+    <nav class="hidden xl:flex items-center justify-center gap-space-xs bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="index.html#inicio" data-i18n="nav_home">Inicio</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="index.html#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="carta.html" data-i18n="nav_menu">Carta</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="reservar.html" data-i18n="nav_book">Reservar</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="index.html#nosotras" data-i18n="nav_us">Nosotras</a>
+    </nav>
+    <div class="justify-self-end flex items-center gap-space-sm">
+      <a class="ig-chip hidden md:inline-flex items-center justify-center" href="https://www.instagram.com/tribu_parc.infantil?igsh=MXh1bmQ5b2Q5ZXd0" rel="noopener noreferrer" target="_blank" data-i18n-aria="ig" aria-label="Instagram de TRIBU">
+        <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9A4.5 4.5 0 0 1 16.5 21h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.7A2.8 2.8 0 0 0 4.7 7.5v9A2.8 2.8 0 0 0 7.5 19.3h9a2.8 2.8 0 0 0 2.8-2.8v-9A2.8 2.8 0 0 0 16.5 4.7h-9Zm9.15 1.55a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.4A4.6 4.6 0 1 1 7.4 12 4.6 4.6 0 0 1 12 7.4Zm0 1.7A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Z"/></svg>
+      </a>
+      <div class="lang-wrap hidden sm:block">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="lang" aria-label="Idioma">
+          <span data-lang-label>ES</span>
+        </button>
+        <div class="lang-menu hidden" role="listbox">
+          <button type="button" role="option" data-lang="ca">CA</button>
+          <button type="button" role="option" data-lang="es">ES</button>
+          <button type="button" role="option" data-lang="en">EN</button>
+        </div>
+      </div>
+      <a class="nav-contact hidden sm:inline-flex items-center gap-1.5 font-label-lg text-label-lg px-5 py-2.5 rounded-full" href="contacto.html" aria-current="page" data-i18n="nav_contact">Contacto</a>
+      <button type="button" id="menu-toggle" class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center" data-i18n-aria="menu_open" aria-label="Abrir menú" aria-expanded="false">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden xl:hidden bg-surface/95 backdrop-blur-xl border-t border-surface-container px-gutter-mobile py-space-md">
+    <nav class="flex flex-col gap-space-xs">
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="index.html#inicio" data-i18n="nav_home">Inicio</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="index.html#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="carta.html" data-i18n="nav_menu">Carta</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="reservar.html" data-i18n="nav_book">Reservar</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="index.html#nosotras" data-i18n="nav_us">Nosotras</a>
+      <a class="nav-contact px-space-md py-space-sm rounded-full font-label-lg text-center" href="contacto.html" data-i18n="nav_contact">Contacto</a>
+      <div class="lang-wrap sm:hidden">
+        <button type="button" class="lang-toggle w-full justify-center" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="lang" aria-label="Idioma">
+          <span data-lang-label>ES</span>
+        </button>
+        <div class="lang-menu hidden left-0 right-0" role="listbox">
+          <button type="button" role="option" data-lang="ca">CA</button>
+          <button type="button" role="option" data-lang="es">ES</button>
+          <button type="button" role="option" data-lang="en">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-20">
+  <section class="contact-shell grid grid-cols-1 lg:grid-cols-12">
+    <div class="lg:col-span-5 contact-stage px-gutter-mobile lg:px-gutter-desktop py-space-2xl lg:py-space-3xl flex flex-col justify-center">
+      <div class="max-w-md">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm mb-space-md">
+          <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          <span class="font-badge-fun text-badge-fun text-terracotta-deep uppercase tracking-wider">Palma</span>
+        </div>
+        <h1 class="font-display-hero text-[40px] leading-[1.05] lg:text-[52px] text-on-surface tracking-tight mb-space-sm">
+          <span data-i18n="contact_h1_a">Hablemos.</span> <span class="text-primary" data-i18n="contact_h1_b">Estamos aquí.</span>
+        </h1>
+        <p class="font-body-md text-on-surface-variant mb-space-xl" data-i18n="contact_p">
+          TRIBU Parque Infantil. Dirección, teléfono y mapa para que nos encuentres fácil.
+        </p>
+
+        <div class="flex flex-col gap-space-sm">
+          <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=TRIBU+Parc+Infantil+Cami+dels+Reis+211+Palma" rel="noopener noreferrer" target="_blank">
+            <span class="contact-icon bg-bubble-soft text-primary"><span class="material-symbols-outlined">location_on</span></span>
+            <span>
+              <span class="block font-label-md text-label-md text-secondary uppercase tracking-wider" data-i18n="loc">Ubicación</span>
+              <span class="block font-title-md text-title-md text-on-surface">Camí dels Reis, 211</span>
+              <span class="block font-body-sm text-on-surface-variant">Palma</span>
+            </span>
+          </a>
+          <a class="contact-card" href="tel:635888833">
+            <span class="contact-icon bg-surface-container-highest text-terracotta-deep"><span class="material-symbols-outlined">call</span></span>
+            <span>
+              <span class="block font-label-md text-label-md text-secondary uppercase tracking-wider" data-i18n="phone">Teléfono</span>
+              <span class="block font-title-md text-title-md text-on-surface">635 888 833</span>
+              <span class="block font-body-sm text-on-surface-variant" data-i18n="call_now">Llamar ahora</span>
+            </span>
+          </a>
+          <a class="contact-card" href="mailto:info@tribuparcinfantil.com">
+            <span class="contact-icon bg-tertiary-fixed text-tertiary"><span class="material-symbols-outlined">mail</span></span>
+            <span>
+              <span class="block font-label-md text-label-md text-secondary uppercase tracking-wider" data-i18n="email">Correo</span>
+              <span class="block font-title-md text-title-md text-on-surface break-all">info@tribuparcinfantil.com</span>
+            </span>
+          </a>
+          <a class="contact-card" href="https://www.instagram.com/tribu_parc.infantil?igsh=MXh1bmQ5b2Q5ZXd0" rel="noopener noreferrer" target="_blank">
+            <span class="contact-icon bg-bubble-soft text-primary"><span class="material-symbols-outlined">photo_camera</span></span>
+            <span>
+              <span class="block font-label-md text-label-md text-secondary uppercase tracking-wider">Instagram</span>
+              <span class="block font-title-md text-title-md text-on-surface">@tribu_parc.infantil</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-space-xl">
+          <a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container font-label-lg px-6 py-3 rounded-full shadow-[0_8px_24px_-4px_rgba(28,175,180,0.28)] hover:-translate-y-1 transition-all" href="https://www.google.com/maps/dir/?api=1&amp;destination=TRIBU+Parc+Infantil,+Cami+dels+Reis+211,+Palma" rel="noopener noreferrer" target="_blank" data-i18n="directions">Cómo llegar</a>
+          <a class="inline-flex items-center gap-2 bg-terracotta-deep text-on-secondary font-label-lg px-6 py-3 rounded-full hover:-translate-y-1 transition-all" href="https://wa.me/34635888833" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 contact-map-wrap">
+      <iframe data-i18n-title="map_title" title="Mapa de TRIBU Parque Infantil en Palma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=TRIBU%20Parc%20Infantil%20Cam%C3%AD%20dels%20Reis%20211%20Palma&amp;z=16&amp;output=embed"></iframe>
+      <div class="contact-map-card">
+        <p class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-1" data-i18n="on_map">En el mapa</p>
+        <p class="font-headline-sm text-headline-sm leading-tight">TRIBU Parque Infantil</p>
+        <p class="font-body-sm text-on-surface-variant mt-1">Camí dels Reis, 211 · Palma</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="w-full bg-surface-container-low text-on-surface">
+  <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+    <p class="font-body-sm text-on-surface-variant">TRIBU Parque Infantil. Feim Tribu, S.L.</p>
+    <div class="flex items-center gap-space-lg font-label-md text-on-surface-variant">
+      <a class="hover:text-on-surface" href="https://www.tribuparcinfantil.com/aviso-legal/" rel="noopener noreferrer" target="_blank" data-i18n="legal">Aviso legal</a>
+      <a class="hover:text-on-surface" href="https://www.tribuparcinfantil.com/politica-de-privacidad/" rel="noopener noreferrer" target="_blank" data-i18n="privacy">Política de privacidad</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

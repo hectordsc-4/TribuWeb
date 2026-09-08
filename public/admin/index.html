@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tribu · Panel de gestión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="tipi"></span>
+            <span class="tipi"></span>
+          </div>
+          <div>
+            <p class="eyebrow">
+              Panel de gestión ·
+              <a href="/" style="color: inherit">Web pública</a> ·
+              <a href="/reservar.html" style="color: inherit">Reservar online</a>
+            </p>
+            <h1>tribu</h1>
+          </div>
+        </div>
+        <p id="config-status" class="status-pill">Comprobando…</p>
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="Secciones">
+        <button type="button" class="tab active" data-view="reservas" role="tab" aria-selected="true">
+          Reservas
+        </button>
+        <button type="button" class="tab" data-view="ocupacion" role="tab" aria-selected="false">
+          Ocupación
+        </button>
+        <button type="button" class="tab" data-view="calendario" role="tab" aria-selected="false">
+          Calendario de Apertura
+        </button>
+      </nav>
+
+      <section id="view-reservas" class="view active" role="tabpanel">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Buscar reservas</h2>
+              <p class="hint tight">
+                Elige un rango de fechas y consulta todas las reservas hechas en la web.
+              </p>
+            </div>
+          </div>
+
+          <form id="reservas-filter" class="filter-bar">
+            <label>
+              Desde
+              <input id="reservas-from" type="date" required />
+            </label>
+            <label>
+              Hasta
+              <input id="reservas-to" type="date" required />
+            </label>
+            <label>
+              Buscar
+              <input id="reservas-q" type="search" placeholder="Nombre o email…" />
+            </label>
+            <button type="submit" class="btn primary">Aplicar</button>
+          </form>
+
+          <div id="reservas-list" class="tx-list wide">
+            <p class="empty">Elige un rango y pulsa Aplicar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-ocupacion" class="view" role="tabpanel" hidden>
+        <div class="panel">
+          <form id="ocupacion-filter" class="filter-bar">
+            <label>
+              Desde
+              <input id="ocupacion-from" type="date" required />
+            </label>
+            <label>
+              Hasta
+              <input id="ocupacion-to" type="date" required />
+            </label>
+            <button type="submit" class="btn primary">Aplicar</button>
+          </form>
+
+          <div class="occupancy-grid">
+            <section class="occ-panel">
+              <div class="occ-head">
+                <h2>Ocupación por día</h2>
+                <span id="occ-total-badge" class="count-badge" title="Personas en el rango">0</span>
+              </div>
+              <p class="hint tight">Gente que va cada día (plazas activas).</p>
+              <div id="occ-by-day" class="day-list">
+                <p class="empty">Sin datos en este rango.</p>
+              </div>
+            </section>
+
+            <section class="occ-panel">
+              <div class="occ-head">
+                <h2>Mapa horario</h2>
+              </div>
+              <p id="occ-hour-subtitle" class="hint tight">Selecciona un día a la izquierda.</p>
+              <div id="occ-by-hour" class="hour-grid"></div>
+            </section>
+          </div>
+
+          <section class="occ-detail">
+            <div class="occ-head">
+              <h2>Todas las reservas</h2>
+              <span id="occ-detail-badge" class="count-badge">0</span>
+            </div>
+            <div id="occ-reservations" class="tx-list wide">
+              <p class="empty">Sin reservas en este rango.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="view-calendario" class="view" role="tabpanel" hidden>
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Calendario de Apertura</h2>
+              <p class="hint tight">
+                Pulsa un día para marcarlo como cierre de tribu (o quitarlo). Se muestran 3 meses.
+              </p>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" id="cal-prev" class="btn ghost small" aria-label="Meses anteriores">
+                ←
+              </button>
+              <button type="button" id="cal-today" class="btn ghost small">Hoy</button>
+              <button type="button" id="cal-next" class="btn ghost small" aria-label="Meses siguientes">
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-legend">
+            <span><i class="swatch open"></i> Abierto</span>
+            <span><i class="swatch closed"></i> Cerrado</span>
+            <span><i class="swatch today"></i> Hoy</span>
+          </div>
+
+          <div id="calendar-months" class="calendar-months"></div>
+          <p id="calendar-message" class="message" role="status"></p>
+        </div>
+      </section>
+
+      <dialog id="refund-dialog">
+        <form method="dialog" id="refund-form" class="form dialog-form">
+          <h3>Devolver pago</h3>
+          <p id="refund-summary" class="hint"></p>
+          <label>
+            Importe a devolver (EUR)
+            <input id="refund-amount" type="number" min="0.01" step="0.01" required />
+          </label>
+          <label>
+            Motivo (opcional)
+            <input id="refund-reason" type="text" maxlength="120" placeholder="Cancelación de plaza" />
+          </label>
+          <p id="refund-message" class="message" role="status"></p>
+          <div class="actions">
+            <button type="submit" class="btn primary" value="confirm">Devolver</button>
+            <button type="button" class="btn ghost" id="refund-cancel">Cerrar</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

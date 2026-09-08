@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TRIBU Parque Infantil · Palma</title>
+<meta name="description" content="Parque infantil Tribu en Palma. Juego libre, cumpleaños, cafetería y actividades puntuales."/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind-config.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md">
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(89,64,55,0.06)]">
+  <div class="h-20 max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop grid grid-cols-[1fr_auto_1fr] items-center gap-space-md">
+    <a class="justify-self-start flex items-center group" href="#inicio">
+      <img alt="TRIBU Parque Infantil" class="h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/Logo-350x100-1.png"/>
+    </a>
+    <nav class="hidden xl:flex items-center justify-center gap-space-xs bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+      <a class="nav-link nav-current px-space-md py-space-xs font-label-lg text-label-lg rounded-full" href="#inicio" data-i18n="nav_home">Inicio</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="carta.html" data-i18n="nav_menu">Carta</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="reservar.html" data-i18n="nav_book">Reservar</a>
+      <a class="nav-link px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface rounded-full" href="#nosotras" data-i18n="nav_us">Nosotras</a>
+    </nav>
+    <div class="justify-self-end flex items-center gap-space-sm">
+      <a class="ig-chip hidden md:inline-flex items-center justify-center" href="https://www.instagram.com/tribu_parc.infantil?igsh=MXh1bmQ5b2Q5ZXd0" rel="noopener noreferrer" target="_blank" data-i18n-aria="ig" aria-label="Instagram de TRIBU">
+        <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9A4.5 4.5 0 0 1 16.5 21h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.7A2.8 2.8 0 0 0 4.7 7.5v9A2.8 2.8 0 0 0 7.5 19.3h9a2.8 2.8 0 0 0 2.8-2.8v-9A2.8 2.8 0 0 0 16.5 4.7h-9Zm9.15 1.55a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.4A4.6 4.6 0 1 1 7.4 12 4.6 4.6 0 0 1 12 7.4Zm0 1.7A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Z"/></svg>
+      </a>
+      <div class="lang-wrap hidden sm:block">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="lang" aria-label="Idioma">
+          <span data-lang-label>ES</span>
+        </button>
+        <div class="lang-menu hidden" role="listbox">
+          <button type="button" role="option" data-lang="ca">CA</button>
+          <button type="button" role="option" data-lang="es">ES</button>
+          <button type="button" role="option" data-lang="en">EN</button>
+        </div>
+      </div>
+      <a class="nav-contact hidden sm:inline-flex items-center gap-1.5 font-label-lg text-label-lg px-5 py-2.5 rounded-full" href="contacto.html" data-i18n="nav_contact">Contacto</a>
+      <button type="button" id="menu-toggle" class="xl:hidden w-10 h-10 rounded-full bg-surface-container flex items-center justify-center" data-i18n-aria="menu_open" aria-label="Abrir menú" aria-expanded="false">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden xl:hidden bg-surface/95 backdrop-blur-xl border-t border-surface-container px-gutter-mobile py-space-md">
+    <nav class="flex flex-col gap-space-xs">
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg nav-current" href="#inicio" data-i18n="nav_home">Inicio</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="carta.html" data-i18n="nav_menu">Carta</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="reservar.html" data-i18n="nav_book">Reservar</a>
+      <a class="nav-link px-space-md py-space-sm rounded-full font-label-lg" href="#nosotras" data-i18n="nav_us">Nosotras</a>
+      <a class="nav-contact px-space-md py-space-sm rounded-full font-label-lg text-center" href="contacto.html" data-i18n="nav_contact">Contacto</a>
+      <div class="lang-wrap sm:hidden">
+        <button type="button" class="lang-toggle w-full justify-center" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="lang" aria-label="Idioma">
+          <span data-lang-label>ES</span>
+        </button>
+        <div class="lang-menu hidden left-0 right-0" role="listbox">
+          <button type="button" role="option" data-lang="ca">CA</button>
+          <button type="button" role="option" data-lang="es">ES</button>
+          <button type="button" role="option" data-lang="en">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="w-full pt-20 bg-surface min-h-screen">
+  <section class="relative overflow-hidden hero-stage" id="inicio">
+    <div class="hero-slides" aria-hidden="true">
+      <img class="is-active" src="images/slider-1.png" alt=""/>
+      <img src="images/slider-2.jpg" alt=""/>
+      <img src="images/slider-3.png" alt=""/>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10 hero-copy">
+      <div class="max-w-2xl flex flex-col items-start gap-5">
+        <div class="inline-flex items-center gap-2 bg-white/85 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+          <span>🌵</span>
+          <span class="font-badge-fun text-badge-fun text-terracotta-deep uppercase tracking-wider" data-i18n="hero_badge">Parque infantil Tribu</span>
+        </div>
+        <h1 class="font-display-hero text-[42px] leading-[1.05] lg:text-display-hero text-white tracking-tight">
+          <span data-i18n="hero_h1_a">En nuestro parque infantil,</span> <span class="text-primary-fixed" data-i18n="hero_h1_b">la diversión no tiene límites</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-white/90 max-w-xl" data-i18n="hero_p">
+          Juego libre, cumpleaños, cafetería y actividades puntuales en Palma.
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-label-lg px-7 py-3.5 rounded-full shadow-[0_8px_24px_-4px_rgba(28,175,180,0.28)] hover:-translate-y-1 transition-all" href="#servicios" data-i18n="hero_cta_services">Ver servicios</a>
+          <a class="inline-flex items-center justify-center gap-2 bg-white text-on-surface font-label-lg px-6 py-3.5 rounded-full hover:-translate-y-0.5 transition-all" href="carta.html" data-i18n="hero_cta_menu">Nuestra carta</a>
+          <a class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-lg px-6 py-3.5 rounded-full hover:-translate-y-0.5 transition-all" href="reservar.html" data-i18n="hero_cta_book">Reservar plaza</a>
+        </div>
+      </div>
+    </div>
+    <svg class="wave-bottom text-canvas-cream" preserveAspectRatio="none" viewBox="0 0 1440 56"><path d="M0 28C240 56 480 0 720 28C960 56 1200 0 1440 28V56H0Z" fill="currentColor"></path></svg>
+  </section>
+
+  <section class="pt-space-xl pb-space-2xl lg:pt-space-2xl lg:pb-space-3xl bg-canvas-cream" id="servicios">
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+      <div class="text-center max-w-2xl mx-auto mb-space-md">
+        <div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-2xs rounded-full mb-space-2xs">
+          <span class="font-badge-fun text-badge-fun text-secondary uppercase" data-i18n="services_badge">Servicios</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-sm lg:text-headline-md" data-i18n="services_h">Qué puedes hacer en TRIBU</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+        <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+          <img class="svc-photo" src="images/galeria-01.jpg" alt="Zona de juego en TRIBU" loading="lazy" decoding="async"/>
+          <div class="p-space-lg">
+            <span class="w-12 h-12 rounded-2xl bg-bubble-soft flex items-center justify-center text-primary mb-space-md">
+              <span class="material-symbols-outlined text-[28px]">child_care</span>
+            </span>
+            <h3 class="font-headline-sm text-headline-sm" data-i18n="svc_play">Juego libre</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" data-i18n="svc_play_p">Un espacio de juego pensado para que los pequeños y pequeñas de la familia exploren, se muevan y se lo pasen en grande, a su ritmo y en un ambiente cercano.</p>
+            <a class="svc-btn svc-btn-teal" href="reservar.html" data-i18n="svc_play_a">Cómo llegar</a>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+          <img class="svc-photo" src="images/galeria-04.jpg" alt="Familias en TRIBU" loading="lazy" decoding="async"/>
+          <div class="p-space-lg">
+            <span class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center text-terracotta-deep mb-space-md">
+              <span class="material-symbols-outlined text-[28px]">celebration</span>
+            </span>
+            <h3 class="font-headline-sm text-headline-sm" data-i18n="svc_bday">Cumpleaños</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" data-i18n="svc_bday_p">Si quieres celebrar un cumpleaños con nuestra Tribu, te acompañamos para que el día sea especial. Pide información y te contamos cómo lo hacemos.</p>
+            <a class="svc-btn svc-btn-terra" href="https://wa.me/34635888833" rel="noopener noreferrer" target="_blank" data-i18n="svc_bday_a">Consultar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+          <img class="svc-photo" src="images/galeria-08.jpg" alt="Cafetería de TRIBU" loading="lazy" decoding="async"/>
+          <div class="p-space-lg">
+            <span class="w-12 h-12 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-md">
+              <span class="material-symbols-outlined text-[28px]">local_cafe</span>
+            </span>
+            <h3 class="font-headline-sm text-headline-sm" data-i18n="svc_cafe">Cafetería</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" data-i18n="svc_cafe_p">Smoothies, bagels, cafés y otras propuestas para acompañar el rato en nuestra zona de cafetería, mientras los peques juegan cerca.</p>
+            <a class="svc-btn svc-btn-gold" href="carta.html" data-i18n="svc_cafe_a">Consultar la carta</a>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+          <img class="svc-photo" src="images/galeria-09.jpg" alt="Actividades en TRIBU" loading="lazy" decoding="async"/>
+          <div class="p-space-lg">
+            <span class="w-12 h-12 rounded-2xl bg-bubble-soft flex items-center justify-center text-primary mb-space-md">
+              <span class="material-symbols-outlined text-[28px]">event</span>
+            </span>
+            <h3 class="font-headline-sm text-headline-sm" data-i18n="svc_act">Actividades puntuales</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" data-i18n="svc_act_p">De vez en cuando organizamos actividades puntuales para las familias. Consulta la programación cuando quieras venir y descubre qué hay previsto.</p>
+            <a class="svc-btn svc-btn-cream" href="https://www.instagram.com/tribu_parc.infantil?igsh=MXh1bmQ5b2Q5ZXd0" rel="noopener noreferrer" target="_blank" data-i18n="svc_act_a">Ver Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-space-xl lg:py-space-2xl bg-surface-container-low" id="nosotras">
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+      <div class="bg-surface-container-lowest rounded-[1.75rem] p-space-md lg:p-space-lg shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-space-md lg:gap-space-lg items-start">
+        <div class="lg:col-span-5">
+          <img class="w-full h-[240px] sm:h-[280px] lg:h-[300px] object-cover object-center rounded-[1.25rem]" data-i18n-alt="us_alt" alt="TRIBU de TRES: las fundadoras con Lluís, Mireia y Lleó" src="images/tribu-familia.jpg" loading="lazy" decoding="async"/>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-space-xs bg-bubble-soft px-space-md py-space-2xs rounded-full mb-space-xs">
+            <span class="font-badge-fun text-badge-fun text-primary uppercase" data-i18n="us_badge">Nosotras</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-sm lg:text-headline-md text-on-surface mb-space-sm" data-i18n="us_h">Esta es nuestra TRIBU de TRES</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-space-sm" data-i18n="us_p1">La maternidad nos llegó casi sin planearla.</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm" data-i18n="us_p2">El proyecto TRIBU nace de una necesidad como madres donde Lluís es el gran protagonista. Dos años más tarde, y con una pandemia entre medio, llegaron Mireia y Lleó para completar nuestra tribu de tres.</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="us_p3">Hacer TRIBU es para nosotras compartir la vida y queríamos compartir con todos y todas quien hay detrás de todo esto. Gracias por acompañarnos en esta aventura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-space-3xl lg:py-space-4xl bg-surface">
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+      <div class="text-center max-w-xl mx-auto mb-space-2xl">
+        <h2 class="font-headline-lg text-headline-md lg:text-headline-lg" data-i18n="reviews_h">Nuestra TRIBU</h2>
+      </div>
+      <div class="review-carousel" id="review-carousel">
+        <div class="review-track">
+          <article class="review-card is-active">
+            <div class="review-top">
+              <img class="review-avatar" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/2.png" alt="Victoria"/>
+              <div class="review-meta">
+                <p class="review-name">Victoria</p>
+                <p class="review-stars" aria-label="5 estrellas">★★★★★</p>
+              </div>
+              <span class="review-pin material-symbols-outlined" aria-hidden="true">location_on</span>
+            </div>
+            <p class="review-text">“Parc Infantil Tribu nos permite tomar ese café tranquilamente con los amigos mientras los niños juegan y los bebes también.”</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <img class="review-avatar" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/3.png" alt="Marga"/>
+              <div class="review-meta">
+                <p class="review-name">Marga</p>
+                <p class="review-stars" aria-label="5 estrellas">★★★★★</p>
+              </div>
+              <span class="review-pin material-symbols-outlined" aria-hidden="true">location_on</span>
+            </div>
+            <p class="review-text">“Celebramos el cumpleaños de nuestro hijo en Tribu y quedamos encantados. Elegimos este parque infantil tanto por la atmósfera familiar y acogedora (y libre del reguetón que ponen últimamente en muchos sitios) como por la comida casera, especialmente los yogures con toppings que sorprendieron tanto a niños como a adultos.”</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <img class="review-avatar" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/4.png" alt="Sara"/>
+              <div class="review-meta">
+                <p class="review-name">Sara</p>
+                <p class="review-stars" aria-label="5 estrellas">★★★★★</p>
+              </div>
+              <span class="review-pin material-symbols-outlined" aria-hidden="true">location_on</span>
+            </div>
+            <p class="review-text">“Un sitio precioso y muy especial. La zona de juego libre para peques de 0-3 es un 10!! El personal es encantador, te hacen sentir como en casa. Como en familia, tu tribu. Lo recomiendo 100%. Volveremos pronto y muy a menudo. Gracias por hacernos sentirnos tan a gusto 💚”</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <img class="review-avatar" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/5.png" alt="Anabel"/>
+              <div class="review-meta">
+                <p class="review-name">Anabel</p>
+                <p class="review-stars" aria-label="5 estrellas">★★★★★</p>
+              </div>
+              <span class="review-pin material-symbols-outlined" aria-hidden="true">location_on</span>
+            </div>
+            <p class="review-text">“El mejor parque de toda la isla, y pronto para todas las edades, cuidan todo mínimo de detalles, es un parque familiar donde podrás encontrar a una familia al timón muy guay. Es genial poder tener un espacio así en Palma, ya que es accesible para TODOS!!! así sí que hacemos tribu!!!”</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <img class="review-avatar" src="https://www.tribuparcinfantil.com/wp-content/uploads/2024/02/6.png" alt="Gemma"/>
+              <div class="review-meta">
+                <p class="review-name">Gemma</p>
+                <p class="review-stars" aria-label="5 estrellas">★★★★★</p>
+              </div>
+              <span class="review-pin material-symbols-outlined" aria-hidden="true">location_on</span>
+            </div>
+            <p class="review-text">“Brutal!! Cuidan los detalles al máximo, tienen rincón de lectur, rincón de la calma, caja con disfraces... La decoración es preciosa, lugar muy amplio y muy bien pensado, tiene zona de bebés y zona de niños con toboganes, cama elástica, piscina de bolas, acceso para minusválidos, tienen comida sana en la carta, monitor@s...”</p>
+          </article>
+        </div>
+        <div class="review-dots" role="tablist" aria-label="Opiniones"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-space-3xl lg:py-space-4xl bg-primary text-on-primary" id="visitanos">
+    <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg">
+      <div>
+        <h2 class="font-headline-lg text-headline-md lg:text-headline-lg mb-space-sm" data-i18n="visit_h">Ven a visitarnos</h2>
+        <p class="font-body-lg text-on-primary/85 max-w-xl" data-i18n="visit_p">Camí dels Reis, 211, Palma. Te esperamos con mapa, teléfono y cómo llegar.</p>
+      </div>
+      <a class="inline-flex items-center justify-center gap-2 bg-surface text-on-surface font-label-lg px-space-xl py-space-md rounded-full hover:-translate-y-0.5 transition-transform" href="contacto.html" data-i18n="visit_cta">Ver contacto y mapa</a>
+    </div>
+  </section>
+</main>
+
+<footer class="w-full bg-surface-container-low text-on-surface">
+  <div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+    <p class="font-body-sm text-on-surface-variant">TRIBU Parque Infantil. Feim Tribu, S.L.</p>
+    <div class="flex items-center gap-space-lg font-label-md text-on-surface-variant">
+      <a class="hover:text-on-surface" href="https://www.tribuparcinfantil.com/aviso-legal/" rel="noopener noreferrer" target="_blank" data-i18n="legal">Aviso legal</a>
+      <a class="hover:text-on-surface" href="https://www.tribuparcinfantil.com/politica-de-privacidad/" rel="noopener noreferrer" target="_blank" data-i18n="privacy">Política de privacidad</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

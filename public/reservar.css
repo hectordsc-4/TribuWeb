@@ -1,0 +1,132 @@
+.book-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1cafb4;
+}
+
+.book-status.bad {
+  color: #c62828;
+}
+
+.book-card {
+  display: grid;
+  gap: 0.9rem;
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(89, 64, 55, 0.08);
+  border: 1px solid rgba(89, 64, 55, 0.08);
+}
+
+.book-card label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #594037;
+}
+
+.book-card input {
+  width: 100%;
+  border: 1px solid #e5ddd6;
+  border-radius: 0.85rem;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  background: #fff;
+  color: #3e2723;
+}
+
+.book-card input:focus {
+  outline: 2px solid rgba(28, 175, 180, 0.35);
+  border-color: #1cafb4;
+}
+
+.book-card input.input-invalid {
+  border-color: #ef9a9a;
+}
+
+.book-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.book-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(28, 175, 180, 0.1);
+  color: #3e2723;
+  font-weight: 600;
+}
+
+.book-total strong {
+  color: #1cafb4;
+  font-size: 1.15rem;
+}
+
+.book-payment {
+  padding: 0.85rem;
+  border: 1px solid #e5ddd6;
+  border-radius: 0.9rem;
+  background: #fff;
+}
+
+.book-msg {
+  min-height: 1.2rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.book-msg.ok {
+  color: #558b2f;
+}
+
+.book-msg.err {
+  color: #c62828;
+}
+
+.book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.book-btn-primary,
+.book-btn-ghost {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.book-btn-primary {
+  background: #1cafb4;
+  color: #fff;
+}
+
+.book-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.book-btn-ghost {
+  background: transparent;
+  color: #594037;
+  border: 1px solid #e5ddd6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .book-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
